@@ -24,10 +24,10 @@ public class VistaDibujo extends View {
         Log.d("width","w="+getWidth());
         Log.d("height","h="+getHeight());
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
-        paint.setColor(Color.BLUE);
+        paint.setColor(Color.RED);
         paint.setStrokeWidth(10);
 
-        paint.setColor(Color.RED);
+        paint.setColor(Color.BLUE);
         canvas.drawLine(0,0,100,100,paint);
         canvas.drawRect(new Rect(180,20,220,80),paint);
     }
