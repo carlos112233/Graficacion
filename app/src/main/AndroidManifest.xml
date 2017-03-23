@@ -16,7 +16,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".CrearGraficador" />
-        <activity android:name=".Casa"></activity>
     </application>
 
 </manifest>

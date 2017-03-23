@@ -29,14 +29,5 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void circulo(View v){
-        Intent i=new Intent(this,CrearGraficador.class);
-        startActivity(i);
 
-    }
-
-    public void  Casa1(View v){
-        Intent inten= new Intent(this, Casa.class);
-        startActivity(inten);
-    }
 }

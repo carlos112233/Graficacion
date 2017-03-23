@@ -1,5 +1,8 @@
 package croma.graficacion;
 
+import android.graphics.Canvas;
+import android.graphics.Paint;
+
 /**
  * Created by upam on 10/03/17.
  */
@@ -11,6 +14,27 @@ public class Punto {
     public Punto(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+    public void puntos(Canvas pintar, Paint lapiz, int Xc, int Yc, int x , int y){
+        pintar.drawPoint(Xc+x,Yc+y,lapiz);
+        pintar.drawPoint(Xc-x,Yc+y,lapiz);
+        pintar.drawPoint(Xc+x,Yc-y,lapiz);
+        pintar.drawPoint(Xc-x,Yc-y,lapiz);
+
+        pintar.drawPoint(Xc+y,Yc+x,lapiz);
+        pintar.drawPoint(Xc-y,Yc+x,lapiz);
+        pintar.drawPoint(Xc+y,Yc-x,lapiz);
+        pintar.drawPoint(Xc-y,Yc-x,lapiz);
+
+
+    }
+    public void ovalos(Canvas pintar, Paint lapiz, int Xc, int Yc, int x , int y) {
+        pintar.drawPoint(Xc + x, Yc + y, lapiz);
+        pintar.drawPoint(Xc - x, Yc + y, lapiz);
+        pintar.drawPoint(Xc + x, Yc - y, lapiz);
+        pintar.drawPoint(Xc - x, Yc - y, lapiz);
+
     }
 
     @Override
