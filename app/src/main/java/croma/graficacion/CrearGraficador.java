@@ -19,7 +19,7 @@ public class CrearGraficador extends AppCompatActivity {
         int opc=i.getIntExtra("dibujo",1);
         //objeto de tipo puntos
         Punto[] puntos=new Punto[10];
-       // puntos[0].setX(i.getIntExtra("x0",0));
+        // puntos[0].setX(i.getIntExtra("x0",0));
         setContentView(new VistaDibujo(getBaseContext(),opc,puntos));
     }
 }

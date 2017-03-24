@@ -32,18 +32,18 @@ class VistaDibujo extends View {
 
         pincel1.setStrokeWidth(10);
         //canvas.drawLine(150, 150, ancho, 20, pincel1);
-        if (opcdibujo == 1) {
-            lineaDDa(canvas, pincel1, new Punto(200, 400), new Punto(100, 100));
+        if (opcdibujo == 1)
+            lineaRecta(canvas, pincel1, new Punto(300,700),new Punto(200,600));
 
-            lineaRecta(canvas,pincel1,new Punto(300,300),new Punto(500,600));
-            CircleMidPoint(canvas, pincel1,600 , 600, 100);
-            elipce(canvas, pincel1,900 , 900, 100,100);
-        }   else if (opcdibujo == 2) {
 
-            lineaRecta(canvas,pincel1,new Punto(300,700),new Punto(200,600));
+           else if (opcdibujo == 2) {
+
+            lineaDDa(canvas,pincel1,new Punto(300,700),new Punto(200,600));
         } else if (opcdibujo == 3) {
-            //codigo
-        } else {
+            Elipse(canvas,pincel1,800,800,200,60);
+        } else if(opcdibujo==4){
+            CircleMidPoint(canvas,pincel1,800,800,200);
+        }else if(opcdibujo==5){
             canvas.drawText("Opcion no existe", getWidth() / 2, getHeight() / 2, pincel1);
         }
 
@@ -108,48 +108,49 @@ class VistaDibujo extends View {
 
 
 
-    public void elipce(Canvas pintar, Paint lapiz, int xc,int yc, int Rx, int Ry){
+    public void Elipse(Canvas g,Paint lapiz , int xc, int yc, int rx, int ry){
         Punto punto = new Punto(0,0);
-       int Rx2=Rx*Rx;
-       int Ry2=Ry*Ry;
-       int A=2*Rx2;
-       int B=2*Ry2;
-       int px=0;
-       int x=0;
-       int y=Ry;
-       int py=A*y;
-        punto.ovalos(pintar,lapiz,xc,yc,x,y);
-        float p=Math.round(Ry2-(Rx2*Ry)+(0.25*Rx2));
-        while (px < py){
+        int x, y, p, px, py;
+        int rx2, ry2, tworx2, twory2;
+        ry2 = ry*ry;
+        rx2 = rx*rx;
+        twory2 = 2 * ry2;
+        tworx2 = 2 * rx2;
+/* región 1 */
+        x = 0;
+        y = ry;
+        punto.ovalos(g,lapiz,xc,yc,x,y);
+        p = (int)Math.round(ry2 - rx2*ry + 0.25*rx2);
+        px = 0;
+        py = tworx2*y;
+        while (px < py) { /* se cicla hasta trazar la región 1 */
             x = x + 1;
-            px=px+B;
+            px = px + twory2;
             if (p < 0)
-                p = p + Ry2*+px;
+                p = p + ry2 + px;
             else {
-               y=y-1;
-               py=py-A;
-               p=p+Ry2+px-py;
-
+                y = y - 1;
+                py = py - tworx2;
+                p = p + ry2 + px - py;
             }
-            punto.puntos(pintar,lapiz,xc,yc,x,y);
-         }
-         p=Math.round(Ry2*(x+0.5)*(x+0.5)+Rx2*(y-1)*(y-1)-Rx2*Ry2);
-        while (y>0){
-            y=y-1;
-            py=py-A;
-            if(p>0){
-                p=p+Rx2-py;
-
-            }else{
-                x=x+1;
-                px=px+B;
-                p+=Rx2-py+py;
-
-
-            }
-            punto.puntos(pintar,lapiz,xc,yc,x,y);
+            punto.ovalos(g,lapiz,xc,yc,x,y);
         }
-
+/* región 2 */
+        p = (int)Math.round(ry2*(x+0.5)*(x+0.5) + rx2*(y-1)*(y-1) - rx2*ry2);
+        px = 0;
+        py = tworx2*y;
+        while (y > 0) { /* se cicla hasta trazar la región 2 */
+            y = y - 1;
+            py = py - tworx2;
+            if (p > 0)
+                p = p + rx2 - py;
+            else {
+                x = x + 1;
+                px = px + twory2;
+                p = p + rx2 + py + px;
+            }
+            punto.ovalos(g,lapiz,xc,yc,x,y);
+        }
     }
 
 }

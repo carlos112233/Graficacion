@@ -8,123 +8,137 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Algoritmos Graficacion"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:text="Algoritmos Graficacion" />
 
-    <RadioButton
-        android:id="@+id/radioButton5"
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:id="@+id/radioGroup2"
         android:layout_below="@+id/textView"
-        android:text="linea" />
+        android:layout_toEndOf="@+id/textView3">
 
-    <RadioButton
-        android:id="@+id/radioButton6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="RadioButton"
-        android:layout_below="@+id/textView"
-        android:layout_toEndOf="@+id/radioButton5"
-        android:layout_marginStart="12dp" />
-
-    <RadioButton
-        android:id="@+id/radioButton7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="RadioButton"
-        android:layout_below="@+id/textView"
-        android:layout_toEndOf="@+id/radioButton6"
-        android:layout_marginStart="23dp" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/radioButton5"
-        android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout">
-        <TextView
-            android:id="@+id/textView2"
+        <RadioButton
+            android:id="@+id/r1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="LineaRecta" />
 
-            android:layout_marginTop="13dp"
-            android:textAppearance="@android:style/TextAppearance.Material.Large"
-            tools:text="X0" />
-
-        <EditText
-            android:id="@+id/editText5"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-
-            android:ems="10"
-            android:inputType="number" />
-
-        <TextView
-            android:id="@+id/textView3"
+        <RadioButton
+            android:id="@+id/r2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Y0"
-            android:textAppearance="@android:style/TextAppearance.Material.Large" />
+            android:layout_alignBottom="@+id/r3"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="23dp"
+            android:layout_weight="1"
+            android:text="LineaADD" />
 
-        <EditText
-            android:id="@+id/editText7"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-
-            android:ems="10"
-            android:inputType="number" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout"
-        android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout2">
-
-        <TextView
-            android:id="@+id/textView6"
+        <RadioButton
+            android:id="@+id/r3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/radioGroup2"
+            android:layout_toEndOf="@+id/radioGroup2"
+            android:layout_weight="1"
+            android:text="Eclipse" />
 
-            android:layout_marginTop="13dp"
-            android:textAppearance="@android:style/TextAppearance.Material.Large"
-            tools:text="X1" />
-
-        <EditText
-            android:id="@+id/editText9"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-
-            android:ems="10"
-            android:inputType="number" />
-
-        <TextView
-            android:id="@+id/textView7"
+        <RadioButton
+            android:id="@+id/r5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Y1"
-            android:textAppearance="@android:style/TextAppearance.Material.Large" />
-
-        <EditText
-            android:id="@+id/editText10"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-
-            android:ems="10"
-            android:inputType="number" />
-
-    </LinearLayout>
+            android:layout_weight="1"
+            android:text="Circulo" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/btngraficar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout2"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="11dp"
+        android:onClick="boton"
         android:text="Graficar" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X0"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:layout_below="@+id/radioGroup2"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="65dp" />
+
+    <EditText
+        android:id="@+id/et1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_alignBaseline="@+id/textView11"
+        android:layout_alignBottom="@+id/textView11"
+        android:layout_toEndOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Y1"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:layout_below="@+id/textView11"
+        android:layout_toStartOf="@+id/et2"
+        android:layout_marginTop="34dp" />
+
+    <EditText
+        android:id="@+id/et2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_alignBaseline="@+id/textView12"
+        android:layout_alignBottom="@+id/textView12"
+        android:layout_alignStart="@+id/et1" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="X1"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:layout_below="@+id/et2"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/et3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_alignBaseline="@+id/textView17"
+        android:layout_alignBottom="@+id/textView17"
+        android:layout_toEndOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Y0"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:layout_alignBottom="@+id/et4"
+        android:layout_toStartOf="@+id/et4" />
+
+    <EditText
+        android:id="@+id/et4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/et3"
+        android:layout_alignStart="@+id/et3" />
 
 
 </RelativeLayout>
