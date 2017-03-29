@@ -1,5 +1,4 @@
 package croma.graficacion;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -33,7 +32,7 @@ class VistaDibujo extends View {
         pincel1.setStrokeWidth(10);
         //canvas.drawLine(150, 150, ancho, 20, pincel1);
         if (opcdibujo == 1)
-            lineaRecta(canvas, pincel1, new Punto(300,700),new Punto(200,600));
+            lineaRecta(canvas,pincel1,new Punto(300,300),new Punto(500,600));
 
 
            else if (opcdibujo == 2) {
@@ -52,13 +51,12 @@ class VistaDibujo extends View {
 
     public void lineaRecta(Canvas pintar, Paint lapiz, Punto p0, Punto p1) {
         int m = (p1.getY() / p1.getX()) - (p0.getY() / p0.getX());
-        int b = p0.getY() - m * p0.getX();
-        int y = 0;
-
-        for (int x = p0.getX(); x < p1.getX(); x++) {
-            y = m * x + b;
-            pintar.drawPoint(x, (int) Math.round(y), lapiz);
-            Log.d("Puntos1", "x:" + x + " y:" + y);
+               int b = p0.getY() - m * p0.getX();
+               int y = 0;
+                       for (int x = p0.getX(); x < p1.getX(); x++) {
+                        y = m * x + b;
+                           pintar.drawPoint(x, (int) Math.round(y), lapiz);
+                       Log.d("Puntos1", "x:" + x + " y:" + y);
 
         }
     }

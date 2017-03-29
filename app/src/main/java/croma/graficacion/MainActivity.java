@@ -11,8 +11,8 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText et1,et2,et3,et4;
-    private RadioButton r1,r2,r3,r4;
+
+    private RadioButton r1,r2,r3,r4,r5;
 
 
     @Override
@@ -21,24 +21,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.principal);
 
 
-        et1=(EditText)findViewById(R.id.et1);
-        et2=(EditText)findViewById(R.id.et2);
-        et3=(EditText)findViewById(R.id.et3);
-        et4=(EditText)findViewById(R.id.et4);
+
         r1=(RadioButton)findViewById(R.id.r1);
         r2=(RadioButton)findViewById(R.id.r2);
         r3=(RadioButton)findViewById(R.id.r3);
-        r4=(RadioButton)findViewById(R.id.r5);
+        r4=(RadioButton)findViewById(R.id.r4);
+        r5=(RadioButton)findViewById(R.id.r5);
 
     }
 
     public void boton(View view) {
         // Inflate the menu; this adds items to the action bar if it is present.
 
-        String valor1=et1.getText().toString();
-        String valor2=et2.getText().toString();
-        String valor3=et3.getText().toString();
-        String valor4=et4.getText().toString();
 
         if (r1.isChecked()==true) {
 
@@ -66,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
             i.putExtra("x0",1);
 
             startActivity(i);
+        }else if(r5.isChecked()){
+            Intent i = new Intent(this, casa.class);
+            startActivity(i);
+
         }
     }
 

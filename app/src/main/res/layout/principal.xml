@@ -45,100 +45,31 @@
             android:text="Eclipse" />
 
         <RadioButton
+            android:id="@+id/r4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/radioGroup2"
+            android:layout_weight="1"
+            android:text="Circulo" />
+
+        <RadioButton
             android:id="@+id/r5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Circulo" />
+            android:text="Casa" />
     </RadioGroup>
 
     <Button
         android:id="@+id/btngraficar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="11dp"
         android:onClick="boton"
-        android:text="Graficar" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="X0"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:text="Graficar"
         android:layout_below="@+id/radioGroup2"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="65dp" />
-
-    <EditText
-        android:id="@+id/et1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_alignBaseline="@+id/textView11"
-        android:layout_alignBottom="@+id/textView11"
-        android:layout_toEndOf="@+id/textView11" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Y1"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"
-        android:layout_below="@+id/textView11"
-        android:layout_toStartOf="@+id/et2"
-        android:layout_marginTop="34dp" />
-
-    <EditText
-        android:id="@+id/et2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_alignBaseline="@+id/textView12"
-        android:layout_alignBottom="@+id/textView12"
-        android:layout_alignStart="@+id/et1" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:text="X1"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"
-        android:layout_below="@+id/et2"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:id="@+id/et3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_alignBaseline="@+id/textView17"
-        android:layout_alignBottom="@+id/textView17"
-        android:layout_toEndOf="@+id/textView17" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Y0"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"
-        android:layout_alignBottom="@+id/et4"
-        android:layout_toStartOf="@+id/et4" />
-
-    <EditText
-        android:id="@+id/et4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_below="@+id/et3"
-        android:layout_alignStart="@+id/et3" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp" />
 
 
 </RelativeLayout>
