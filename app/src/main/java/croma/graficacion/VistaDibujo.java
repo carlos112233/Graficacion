@@ -151,4 +151,7 @@ class VistaDibujo extends View {
         }
     }
 
+
+
+
 }
